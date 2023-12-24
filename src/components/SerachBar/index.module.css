@@ -1,0 +1,10 @@
+
+.container{
+    @apply w-1/2  my-8 mx-auto
+}
+.search{
+    @apply w-full p-3 my-8 mx-auto flex rounded-md;
+    border: 1px solid theme(colors.border1);
+    box-shadow: theme(colors.shadow1)
+    
+}

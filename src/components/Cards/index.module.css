@@ -1,0 +1,62 @@
+.container{
+    @apply flex w-1/4 h-52 justify-between rounded-md p-7;
+    border:2px solid theme(colors.border1);
+    box-shadow:theme(colors.shadow1);
+    background-color:#649fb4;
+    position:relative;
+    margin:3rem;
+    margin-top:4rem
+}
+
+.name{
+    color:white;
+    @apply text-3xl;
+}
+
+.id{
+    color:rgba(255,255,255,0.5);
+    @apply text-lg font-bold mt-3
+
+}
+
+
+.type{
+    @apply w-fit text-sm p-1 px-2 rounded-xl;
+    margin-top:1rem;
+    color:white;
+    background-color:rgba(255,255,255,0.2)
+}
+
+.img{
+    width:7rem
+}
+
+.logo{
+    position:absolute;
+    transform:rotate(-24.5deg);
+    @apply w-full  my-auto  text-5xl;
+    margin-left:1.5rem;
+    color:rgba(255,255,255,0.2)
+}
+
+.right{
+    position:relative;
+}
+.btn{
+    position:absolute;
+    transform:translateX(6rem) translateY(8rem);
+    color:white;
+    background-color:rgb(100,189,180,0.6);
+    border-radius:6px;
+    padding:0.5rem;
+    font-weight:bold
+}
+
+.stat{
+    @apply w-full h-full rounded-md;
+    postion:absolute;
+    color:white;
+    font-weight:bold;
+    background-color:#649fb4
+
+}

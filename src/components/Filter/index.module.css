@@ -1,0 +1,11 @@
+
+.container{
+    @apply flex justify-end    mr-8;
+    
+}
+
+.filter{
+   @apply rounded-md p-2;
+   border: 1px solid theme(colors.border1);
+   box-shadow:theme(colors.shadow1)
+}
