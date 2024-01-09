@@ -6,7 +6,7 @@ import Card from './components/Cards';
 import ShowCard from './components/ShowCard';
 import React, { useEffect, useState } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-
+import MobileWarning from './components/mobilewarning/MobileWarning';
 
 
  async function  take(api){
@@ -35,8 +35,22 @@ function App() {
   
   const[poke,setPoke]=useState([])
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   
-  
+  useEffect(() => {
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // Initial check
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   
   useEffect(()=>{
         async function call(){
@@ -66,7 +80,12 @@ function App() {
 
    
   return (
-    <div className={style.body} style={{ position: 'relative' }}>
+      <div>
+         {isMobile ?
+        (
+          <MobileWarning />
+        ) : (
+          <div className={style.body} style={{ position: 'relative' }}>
         <Search/>
         <Filter/>
         
@@ -90,6 +109,11 @@ function App() {
         
         
     </div>
+        )}
+        
+        
+      </div>
+    
   );
 }
 
